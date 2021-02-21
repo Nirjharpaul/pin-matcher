@@ -19,7 +19,33 @@ function generatePin() {
 
 document.getElementById('digit-container')
     .addEventListener('click', function () {
-        console.log(event.target.innerText)
+        const digit = event.target.innerText;
+        if (isNaN(digit)) {
+            if (digit === 'C') {
+                const typedInput = document.getElementById('typed-pin');
+                typedInput.value = '';
+            }
+        }
+        else {
+            const typedInput = document.getElementById('typed-pin');
+            typedInput.value = typedInput.value + digit;
+
+        }
     })
+
+//submit button 
+function verifyPin() {
+    const pin = document.getElementById('pin');
+    const typedPin = document.getElementById('typed-pin');
+    if (pin === typedPin) {
+        const correct = document.getElementById('correct-pin');
+        correct.style.display = 'block';
+    }
+    else {
+        const incorrect = document.getElementById('incorrect-pin');
+        incorrect.style.display = 'block';
+    }
+};
+
 
 

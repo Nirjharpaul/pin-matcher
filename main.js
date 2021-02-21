@@ -14,3 +14,12 @@ function generatePin() {
     const pinInput = document.getElementById('pin');
     pinInput.value = getPin();
 }
+
+// event bubble
+
+document.getElementById('digit-container')
+    .addEventListener('click', function () {
+        console.log(event.target.innerText)
+    })
+
+
